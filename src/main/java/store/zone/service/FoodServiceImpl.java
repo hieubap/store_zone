@@ -1,5 +1,4 @@
 package store.zone.service;
-import java.time.LocalDateTime;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 import store.zone.dao.model.FoodEntity;
 import store.zone.dao.repository.FoodRepository;
 import store.zone.dto.FoodDTO;
+import store.zone.dto.ResponseDTO;
 import store.zone.exception.BaseException;
 
 @Service
@@ -29,7 +29,7 @@ public class FoodServiceImpl implements FoodService {
       listDto.add(dto);
     }
 
-    return new ResponseEntity<>(listDto, HttpStatus.OK);
+    return new ResponseEntity<>(new ResponseDTO<>(listDto), HttpStatus.OK);
   }
 
   @Override
@@ -40,7 +40,7 @@ public class FoodServiceImpl implements FoodService {
 
     foodRepository.save(entity);
 
-    return new ResponseEntity<>(entity,HttpStatus.OK);
+    return new ResponseEntity<>(new ResponseDTO<>(entity),HttpStatus.OK);
   }
 
   @Override
@@ -53,7 +53,7 @@ public class FoodServiceImpl implements FoodService {
     entity.setPrice(dto.getPrice());
     foodRepository.save(entity);
 
-    return new ResponseEntity<>(entity,HttpStatus.OK);
+    return new ResponseEntity<>(new ResponseDTO<>(entity),HttpStatus.OK);
   }
 
   @Override
@@ -62,6 +62,8 @@ public class FoodServiceImpl implements FoodService {
       throw new BaseException(400,"id is not exist. check your id",id);
     }
     foodRepository.deleteById(id);
-    return new ResponseEntity<>("delete id '" + id +"' successful",HttpStatus.OK);
+    ResponseDTO<?> responseDTO = new ResponseDTO(200,"delete id '" + id +"' successful",null);
+
+    return new ResponseEntity<>(responseDTO,HttpStatus.OK);
   }
 }

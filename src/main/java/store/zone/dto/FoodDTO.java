@@ -10,6 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class FoodDTO {
+  private Long id;
   private String name;
   private Long price;
 }

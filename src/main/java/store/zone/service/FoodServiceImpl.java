@@ -24,6 +24,7 @@ public class FoodServiceImpl implements FoodService {
 
     for (FoodEntity entity : list){
       FoodDTO dto = new FoodDTO();
+      dto.setId(entity.getId());
       dto.setName(entity.getName());
       dto.setPrice(entity.getPrice());
       listDto.add(dto);

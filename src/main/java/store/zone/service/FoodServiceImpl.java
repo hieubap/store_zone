@@ -18,9 +18,9 @@ public class FoodServiceImpl implements FoodService {
   private FoodRepository foodRepository;
 
   @Override
-  public ResponseEntity<?> search() {
+  public ResponseEntity<?> search(FoodDTO foodDTO) {
     List<FoodDTO> listDto = new ArrayList<>();
-    List<FoodEntity> list = foodRepository.findAll();
+    List<FoodEntity> list = foodRepository.search(foodDTO);
 
     for (FoodEntity entity : list){
       FoodDTO dto = new FoodDTO();

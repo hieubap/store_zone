@@ -23,8 +23,8 @@ public class FoodController {
   private FoodService foodService;
 
   @GetMapping(value = "/search")
-  public ResponseEntity<?> search() {
-    return foodService.search();
+  public ResponseEntity<?> search(FoodDTO foodDTO) {
+    return foodService.search(foodDTO);
   }
 
   @PostMapping(value = "/create")

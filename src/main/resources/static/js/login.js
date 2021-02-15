@@ -1,6 +1,6 @@
-const url = 'http://localhost:8080/login';
-const login_url = 'http://localhost:8080/management.html';
-const home_url = 'http://localhost:8080/index.html';
+const url = 'http://93.188.162.82:8080/login';
+const login_url = 'http://93.188.162.82:8080/management.html';
+const home_url = 'http://93.188.162.82:8080/index.html';
 
 function login(){
   const form = document.getElementById('form_login');

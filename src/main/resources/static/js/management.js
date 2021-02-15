@@ -7,7 +7,7 @@ const url_menu = 'http://93.188.162.82:8080/food/search?name=';
 const url_menu_delete = 'http://93.188.162.82:8080/food/delete?id=';
 
 const url_bill = "http://93.188.162.82:8080/bill/search?name=";
-const url_bill_delete = "http://localhost:8080/bill/delete?id=";
+const url_bill_delete = "http://93.188.162.82:8080/bill/delete?id=";
 
 var x = [];
 var y = [];

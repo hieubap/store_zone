@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -45,5 +46,10 @@ public class BillController {
   @PutMapping(value = "/delivered")
   public ResponseEntity<?> deliveredBill(@Param(value = "id") Long id) throws Exception {
     return billService.delivered(id);
+  }
+
+  @DeleteMapping(value = "/delete")
+  public ResponseEntity<?> deleteBill(@Param(value = "id") Long id) throws Exception {
+    return billService.delete(id);
   }
 }

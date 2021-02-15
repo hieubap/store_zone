@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+  <!-- Site Metas -->
+  <title>Mua sam Zone | đặt món ăn qua mạng</title>
+  <meta name="muasamzone" content="mua sam zone">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- color -->
+  <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
+
+  <!-- Modernizer -->
+  <script src="js/modernizer.js"></script>
+
+</head>
+
+<body>
+<div id="loader">
+  <div id="status"></div>
+</div>
+<div id="site-header">
+  <header id="header" class="header-block-top">
+    <div class="container">
+      <div style="float: left" class="header_search">
+        <input id="name_search" type="text" class="search_input" name="name" maxlength="128" placeholder="tìm kiếm sản phẩm">
+        <div class="div_btn_search">
+          <button class="header__search-btn" id="search_btn" onclick="loadMenu()">
+            <i class="icon_search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="main-menu">
+        <nav class="navbar navbar-default" id="mainNav" style="float: right">
+          <div id="navbar" class="navbar-collapse collapse" style="float: right">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="http://localhost:8080/index.html">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#reservation">Đơn hàng</a></li>
+              <li><a href="http://localhost:8080/login.html">đăng nhập</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="container" style="width: -moz-max-content;margin-top: 90px;background: white;padding: 50px 50px">
+  <div style="float: left">
+    <img src="images/qc1.png" style="width: 400px;height: 400px;">
+    <div style="padding-top: 20px">
+      <img src="images/qc2.jpg" style="width: 91px;height: 91px;float: left">
+      <img src="images/qc1.png" style="width: 91px;height: 91px;margin:0 0 0 12px;float: left">
+      <img src="images/qc3.jpg" style="width: 91px;height: 91px;margin:0 0 0 12px;float: left">
+      <img src="images/qc1.png" style="width: 91px;height: 91px;margin:0 0 0 12px;float: left">
+    </div>
+  </div>
+  <div style="float: left;font-size: 20px;padding: 20px 40px">
+    <div>
+      <p>tên của sản phẩm . tên món ăn. tên </p>
+    </div>
+    <div>
+      4.9 * * * * * | 1k đã bán  | 4k đánh giá
+    </div>
+    <div style="font-size: 30px;color: firebrick;background: #f9f9f9;padding-left: 50px">
+      200.000đ
+    </div>
+    <div>
+      loại sản phẩm: ............
+    </div>
+    <div>
+      số lượng: 1
+    </div>
+    <div >
+      <button>thêm vào giỏ hàng </button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 30px">
+  <div style="float: left;width: 900px;background: white;padding: 50px 50px">
+  <div style="float: top;height: 300px">
+      <h1 style="background: #f5f5f5;padding-left: 50px">
+        chi tiết sản phẩm
+      </h1>
+    <div style="width: 300px;float: left" >
+      <p class="text_" style="">
+        Thương hiệu  :
+        Dành cho loại da  :
+        Dung tích (ml)  :
+        Xuất xứ   :
+        Khối lượng (g)  :
+        Số lượng hàng khuyến mãi  :
+        Số sản phẩm còn lại   :
+        Gửi từ :
+      </p>
+    </div>
+    <div style="width: 300px;float: left">
+      <p class="text_" style="">
+        L'Oréal Paris
+        Mọi loại da
+        400
+        Trung Quốc
+        0.4293
+        157
+        1470
+        Quận 7, TP. Hồ Chí Minh
+      </p>
+    </div>
+  </div>
+  <div >
+    <h1 style="background: #f5f5f5;padding-left: 50px">
+    mô tả chi tiết
+  </h1>
+    <div class="text_">
+  <span>
+    • VÌ SAO BẠN SẼ THÍCH?
+    Với công nghệ mới,  mang đến các tẩy trang, làm sạch, giữ ẩm và dưỡng mềm da đồng thời chỉ trong một sản phẩm. L'Oreal Paris 3-in-1 Micellar Water giúp lấy đi sạch cặn trang điểm nhưng không làm khô da. Hơn thế, thành phần an toàn và công nghệ tiên tiến giúp da giữ nước, thông thoáng, mềm mượt chỉ trong một bước.
+
+    • ƯU ĐIỂM NỔI BẬT
+    Refreshing ● Tươi mát (xanh dương nhạt): Nhờ thành phần Nước khoáng lấy từ những ngọn núi ở Pháp, làn da trông tươi tắn lên sau khi tẩy trang. Sản phẩm giúp tẩy sạch, loại bỏ lớp trang điểm và làm dịu da. Không chứa dầu, hương liệu và Ethanol. Dành cho da dầu/da hỗn hợp. Phù hợp với cả da nhạy cảm.
+
+    • HIỆU QUẢ SỬ DỤNG
+    giúp làm sạch lấy đi sạch cặn trang điểm những vẫn giúp da giữ ẩm, thông thoáng và mềm mượt chỉ trong một bước.
+
+    • HƯỚNG DẪN SỬ DỤNG
+    ● Lắc đều.
+    ● Cho sản phẩm vào bông tẩy trang rồi nhẹ nhàng lau lên mặt, mắt và môi theo chuyển động tròn.
+    ● Không cần rửa lại với nước.
+
+    • THÔNG TIN THƯƠNG HIỆU
+    Hơn 100 năm thành lập, L’Oréal là tập đoàn chuyên về mỹ phẩm và chăm sóc sắc đẹp lớn nhất thế giới. L’Oréal Paris đã có mặt tại hơn 120 quốc gia với các dòng sản phẩm về chăm sóc tóc, chăm sóc da và trang điểm dành cho đại chúng. Được xây dựng trên nền tảng khoa học, áp dụng những phát minh công nghệ mới nhất, các sản phẩm L’Oréal Paris có chất lượng cao cấp, đa dạng, dễ sử dụng, với mức giá phù hợp cho tất cả mọi người, đáp ứng nhiều nhu cầu làm đẹp.
+    *L’Oréal Paris là nhãn hiệu mỹ phẩm hàng đầu tại Châu Âu được sản xuất tại nhiều nhà máy trên toàn thế giới như Trung Quốc, Mỹ, Indonesia… Dù được sản xuất ở đâu, các sản phẩm đều tuân theo quy trình kiểm soát chất lượng nghiêm ngặt và đồng đều của L’Oréal Toàn Cầu. Các sản phẩm chính hãng đều có tem nhãn tiếng Việt phía sau và nhập khẩu trực tiếp từ công ty TNHH L’Oréal Việt Nam nên các bạn hoàn toàn yên tâm về chất lượng sản phẩm.
+
+    #loreal paris #micellar #tay trang #nuoctaytrang
+
+    Xuất xứ: Trung Quốc
+    HSD: 3 năm kể từ ngày sản xuất
+    NSX: Xem trên bao bì
+
+    **Bao bì thay đổi theo từng đợt nhập hàng
+  </span>
+    </div>
+  </div>
+</div>
+
+  <div style="float: right;width: 200px">
+    <div class="box_menu" >
+      <a>
+        <div>
+          <img src="images/food2.jpg" class="box_menu_image"></div>
+        <div> sản phẩm bày bán </div>
+        <div>
+          <div style="float: left"><div class="price"> giá : 200.000đ </div>
+            <p style="float: bottom;font-size: 15px;color: #909090">đã bán: 1,5k </p></div>
+          <button onclick='order(`+JSON.stringify(parse.data[i*number_line+j])+`)' class="btn btn-default"> Đặt </button></div>
+        </a>
+      </div>
+    <div class="box_menu" >
+      <a>
+        <div>
+          <img src="images/food3.jpg" class="box_menu_image"></div>
+        <div> sản phẩm bày bán </div>
+        <div>
+          <div style="float: left"><div class="price"> giá : 120.000đ </div>
+            <p style="float: bottom;font-size: 15px;color: #909090">đã bán: 10,5k </p></div>
+          <button onclick='order(`+JSON.stringify(parse.data[i*number_line+j])+`)' class="btn btn-default"> Đặt </button></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- end menu -->
+<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
+  <div class="container">
+    <div class="row">
+      <div class="form-reservations-box">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+            <h2 class="block-title text-center">Đơn hàng</h2>
+          </div>
+          <p>VUI LÒNG ĐIỀN ĐẦY ĐỦ CÁC THÔNG TIN SAU. ĐỂ CHÚNG TÔI XÁC NHẬN GIAO HÀNG!</p>
+          <div id="list_order_food"></div>
+
+          <form id="contact-form" method="post" class="reservations-box" name="contactform" action="mail.php">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-box">
+                <input type="text" name="form_name" id="form_name" placeholder="tên" required="required" data-error="Firstname is required.">
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-box">
+                <input type="text" name="address" id="address" placeholder="địa chỉ" required="required" data-error="address is required.">
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-box">
+                <input type="text" name="phone" id="phone" placeholder="số điện thoại" required="required">
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-box">
+                <input type="text" name="note" id="note" placeholder="ghi chú">
+              </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="reserve-book-btn text-center">
+                <button class="hvr-underline-from-center" type="submit" value="SEND" id="submit">XÁC NHẬN ĐƠN HÀNG </button>
+              </div>
+            </div>
+            <!-- end col -->
+          </form>
+          <!-- end form -->
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end reservations-box -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
+<!-- end reservations-main -->
+
+<div id="footer" class="footer-main">
+  <div class="footer-news pad-top-100 pad-bottom-70 parallax">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+            <h2 class="ft-title color-white text-center"> Ý kiến đóng góp </h2>
+            <p> nếu bạn không hài lòng với dịch vụ của chúng tôi. xin vui lòng đóng
+              góp ý kiến để cửa hàng chúng tôi hoàn thiện mình hơn!</p>
+          </div>
+          <form>
+            <input type="email" placeholder="vui lòng điền ý kiến ...">
+            <a href="#" class="orange-btn"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+          </form>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end footer-news -->
+  <div class="footer-box pad-top-70">
+    <div class="container">
+      <div class="row">
+        <div class="footer-in-main">
+          <div class="footer-logo">
+            <div class="text-center">
+              <img src="images/logo.png" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="footer-box-a">
+              <h3>Giới thiệu</h3>
+              <p>quán ăn của chúng tôi chuyên phục vụ các món ăn online</p>
+              <ul class="socials-box footer-socials pull-left">
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa  fa-facebook"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-twitter"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-google-plus"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-pinterest"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-linkedin"></i></div>
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+            <!-- end footer-box-a -->
+          </div>
+          <!-- end col -->
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="footer-box-c">
+              <h3>Liên Hệ</h3>
+              <p>
+                <i class="fa fa-map-signs" aria-hidden="true"></i>
+                <span>1 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</span>
+              </p>
+              <p>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+                <span> 096.156.2525 </span>
+              </p>
+              <p>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span><a href="#">hieunq@gmail.com</a></span>
+              </p>
+            </div>
+            <!-- end footer-box-c -->
+          </div>
+          <!-- end col -->
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="footer-box-d">
+              <h3>Giờ mở cửa</h3>
+              <div>
+                <p>Các ngày trong tuần </p>
+                <span> 7:00 AM - 10:00 PM</span>
+              </div>
+            </div>
+            <!-- end footer-box-d -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end footer-in-main -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+    <div id="copyright" class="copyright-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h6 class="copy-title"> &copy; 2021 Đặt hàng online <a href="#" target="_blank"></a> </h6>
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end copyright-main -->
+  </div>
+  <!-- end footer-box -->
+</div>
+<!-- end footer-main -->
+
+<a href="#" class="scrollup" style="display: none;">Scroll</a>
+
+<section id="color-panel" class="close-color-panel">
+  <a class="panel-button gray2"><i class="fa fa-cog fa-spin fa-2x"></i></a>
+  <!-- Colors -->
+  <div class="segment">
+    <h4 class="gray2 normal no-padding">Color Scheme</h4>
+    <a title="orange" class="switcher orange-bg"></a>
+    <a title="strong-blue" class="switcher strong-blue-bg"></a>
+    <a title="moderate-green" class="switcher moderate-green-bg"></a>
+    <a title="vivid-yellow" class="switcher vivid-yellow-bg"></a>
+  </div>
+</section>
+
+<!-- ALL JS FILES -->
+<script src="js/all.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/custom.js"></script>
+<script src="js/myscript.js"></script>
+</body>
+
+</html>

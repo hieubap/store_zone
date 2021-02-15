@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+    <!-- Site Metas -->
+    <title>Mua sam Zone | đặt món ăn qua mạng</title>
+    <meta name="muasamzone" content="mua sam zone">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- color -->
+    <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
+
+    <!-- Modernizer -->
+    <script src="js/modernizer.js"></script>
+
+</head>
+
+<body>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>đặt hàng thành công</p>
+    </div>
+
+</div>
+
+    <div id="loader">
+        <div id="status"></div>
+    </div>
+    <div id="site-header">
+      <header id="header" class="header-block-top">
+        <div class="container">
+                <div style="float: left" class="header_search">
+                      <input id="name_search" type="text" class="search_input" name="name" maxlength="128" placeholder="tìm kiếm sản phẩm">
+                    <div class="div_btn_search">
+                    <button class="header__search-btn" id="search_btn" onclick="loadMenu()">
+                        <i class="icon_search"></i>
+                    </button>
+                    </div>
+                </div>
+            <div class="main-menu">
+            <nav class="navbar navbar-default" id="mainNav" style="float: right">
+                <div id="navbar" class="navbar-collapse collapse" style="float: right">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="http://localhost:8080/index.html">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#reservation">Đơn hàng</a></li>
+                    <li><a href="http://localhost:8080/login.html">đăng nhập</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+        </div>
+      </header>
+    </div>
+
+    <div class="container" style="margin-top: 80px">
+        <div style="float: left">
+            <img src="images/qc1.png" style="width: 730px;height: 410px;">
+        </div>
+        <div style="float: right">
+            <div style="float: top">
+                <img src="images/qc2.jpg" style="width: 400px;height: 200px;">
+            </div>
+            <div style="float: top">
+                <img src="images/qc3.jpg" style="width: 400px;height: 200px;margin-top: 10px">
+            </div>
+        </div>
+    </div>
+
+    <div id="menu" class="menu-main pad-top-100 pad-bottom-200">
+        <div class="container">
+            <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+              <h2 class="block-title text-center">Menu</h2>
+            </div>
+            <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                <p class="text-center" style="font-size: 18px"><b>tất cả các món ăn của chúng tôi!</b></p>
+            </div>
+          <div id="showfood"></div>
+        </div>
+    </div>
+
+    <!-- end menu -->
+    <div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="form-reservations-box">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                            <h2 class="block-title text-center">Đơn hàng</h2>
+                        </div>
+                        <p>VUI LÒNG ĐIỀN ĐẦY ĐỦ CÁC THÔNG TIN SAU. ĐỂ CHÚNG TÔI XÁC NHẬN GIAO HÀNG!</p>
+                        <div id="list_order_food"></div>
+
+                        <form id="contact-form" method="post" class="reservations-box" name="contactform" action="">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="form_name" id="form_name" placeholder="tên" required="required" data-error="Firstname is required.">
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="address" id="address" placeholder="địa chỉ" required="required" data-error="address is required.">
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="phone" id="phone" placeholder="số điện thoại" required="required">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="note" id="note" placeholder="ghi chú">
+                                </div>
+                            </div>
+                            <!-- end col -->
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="reserve-book-btn text-center">
+                                    <button onclick="book()" class="hvr-underline-from-center" type="submit" value="SEND" id="myBtn">XÁC NHẬN ĐƠN HÀNG </button>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </form>
+                        <!-- end form -->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end reservations-box -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end reservations-main -->
+
+    <div id="footer" class="footer-main">
+        <div class="footer-news pad-top-100 pad-bottom-70 parallax">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                            <h2 class="ft-title color-white text-center"> Ý kiến đóng góp </h2>
+                            <p> nếu bạn không hài lòng với dịch vụ của chúng tôi. xin vui lòng đóng
+                                góp ý kiến để cửa hàng chúng tôi hoàn thiện mình hơn!</p>
+                        </div>
+                        <form>
+                            <input type="email" placeholder="vui lòng điền ý kiến ...">
+                            <a href="#" class="orange-btn"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+                        </form>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end footer-news -->
+        <div class="footer-box pad-top-70">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-in-main">
+                        <div class="footer-logo">
+                            <div class="text-center">
+                                <img src="images/logo.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-box-a">
+                                <h3>Giới thiệu</h3>
+                                <p>quán ăn của chúng tôi chuyên phục vụ các món ăn online</p>
+                                <ul class="socials-box footer-socials pull-left">
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa  fa-facebook"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-twitter"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-google-plus"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-pinterest"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-linkedin"></i></div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!-- end footer-box-a -->
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-box-c">
+                                <h3>Liên Hệ</h3>
+                                <p>
+                                    <i class="fa fa-map-signs" aria-hidden="true"></i>
+                                    <span>1 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</span>
+                                </p>
+                                <p>
+                                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                                    <span> 096.156.2525 </span>
+                                </p>
+                                <p>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <span><a href="#">hieunq@gmail.com</a></span>
+                                </p>
+                            </div>
+                            <!-- end footer-box-c -->
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-box-d">
+                                <h3>Giờ mở cửa</h3>
+                                <div>
+                                        <p>Các ngày trong tuần </p>
+                                        <span> 7:00 AM - 10:00 PM</span>
+                                </div>
+                            </div>
+                            <!-- end footer-box-d -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end footer-in-main -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+            <div id="copyright" class="copyright-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h6 class="copy-title"> &copy; 2021 Đặt hàng online <a href="#" target="_blank"></a> </h6>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end copyright-main -->
+        </div>
+        <!-- end footer-box -->
+    </div>
+    <!-- end footer-main -->
+
+    <a href="#" class="scrollup" style="display: none;">Scroll</a>
+
+    <section id="color-panel" class="close-color-panel">
+        <a class="panel-button gray2"><i class="fa fa-cog fa-spin fa-2x"></i></a>
+        <!-- Colors -->
+        <div class="segment">
+            <h4 class="gray2 normal no-padding">Color Scheme</h4>
+            <a title="orange" class="switcher orange-bg"></a>
+            <a title="strong-blue" class="switcher strong-blue-bg"></a>
+            <a title="moderate-green" class="switcher moderate-green-bg"></a>
+            <a title="vivid-yellow" class="switcher vivid-yellow-bg"></a>
+        </div>
+    </section>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/myscript.js"></script>
+</body>
+
+</html>

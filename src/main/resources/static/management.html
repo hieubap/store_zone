@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="js/Chart.min.js"></script>
+  <!-- Basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+  <!-- Site Metas -->
+  <title>Mua sam Zone | đặt món ăn qua mạng</title>
+  <meta name="muasamzone" content="mua sam zone">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/management.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- color -->
+  <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
+
+  <!-- Modernizer -->
+  <script src="js/modernizer.js"></script>
+
+</head>
+
+<body>
+<div id="loader">
+  <div id="status"></div>
+</div>
+<div id="site-header">
+  <header id="header" class="header-block-top">
+    <div class="container">
+      <div style="float: left" class="header_search">
+        <input id="name_search" type="text" class="search_input" name="name" maxlength="128" placeholder="tìm kiếm sản phẩm">
+        <div class="div_btn_search">
+          <button class="header__search-btn" id="search_btn" onclick="loadMenu()">
+            <i class="icon_search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="main-menu">
+        <nav class="navbar navbar-default" id="mainNav" style="float: right">
+          <div id="navbar" class="navbar-collapse collapse" style="float: right">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="http://localhost:8080/index.html">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#reservation">Đơn hàng</a></li>
+              <li><a href="http://localhost:8080/create_product.html">thêm món mới</a></li>
+              <li><a href="http://localhost:8080/login.html">đăng nhập</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="container" style="margin-top: 100px;background: white;font-size: 30px">
+  <h1 class="block-title text-center wow fadeIn" style="text-align: center;
+  padding-top: 50px;" data-wow-duration="1s" data-wow-delay="0.1s">
+      Thống kê
+  </h1>
+  <div>
+    <canvas id="chart" style="color: white;width: -moz-max-content;height: 800px;"></canvas>
+  </div>
+</div>
+
+
+<div class="container" style="margin-top: 100px;background: white;width: 800px;height: auto;font-size: 17px">
+  <h1 class="block-title text-center wow fadeIn" style="text-align: center;
+  padding-top: 50px;" data-wow-duration="1s" data-wow-delay="0.1s">
+    Menu
+  </h1>
+  <div id="list_menu">
+
+  </div>
+  <div>
+    <button onclick="goMenuR()" class="button_green">
+      >
+    </button>
+    <button onclick="goMenuL()" class="button_green">
+      <
+    </button>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 100px;background: white;width: 800px;height: auto;font-size: 17px;padding: 20px 20px">
+  <h1 class="block-title text-center wow fadeIn" style="text-align: center;
+  padding-top: 50px;" data-wow-duration="1s" data-wow-delay="0.1s">
+    Các đơn trong tháng
+  </h1>
+  <div id="list_bill">
+  </div>
+  <div>
+    <button onclick="goBillR()" class="button_green">
+      >
+    </button>
+    <button onclick="goBillL()" class="button_green">
+      <
+    </button>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 100px;background: white;width: 800px;height: 500px;font-size: 30px">
+  <h1 style="text-align: center;padding-top: 50px">
+    phản hồi khách hàng
+  </h1>
+  <ul>
+    <li> đơn 1: ngày giờ tháng năm </li>
+    <li> đơn 12: ngày giờ tháng năm </li>
+    <li> đơn 13: ngày giờ tháng năm </li>
+    <li> đơn 14: ngày giờ tháng năm </li>
+    <li> đơn 15: ngày giờ tháng năm </li>
+    <li> đơn 16: ngày giờ tháng năm </li>
+    <li> đơn 17: ngày giờ tháng năm </li>
+  </ul>
+</div>
+
+<div id="footer" class="footer-main">
+  <!-- end footer-news -->
+  <div class="footer-box pad-top-70">
+    <div class="container">
+      <div class="row">
+        <div class="footer-in-main">
+          <div class="footer-logo">
+            <div class="text-center">
+              <img src="images/logo.png" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="footer-box-a">
+              <h3>Giới thiệu</h3>
+              <p>quán ăn của chúng tôi chuyên phục vụ các món ăn online</p>
+              <ul class="socials-box footer-socials pull-left">
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa  fa-facebook"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-twitter"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-google-plus"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-pinterest"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="social-circle-border"><i class="fa fa-linkedin"></i></div>
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+            <!-- end footer-box-a -->
+          </div>
+          <!-- end col -->
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="footer-box-c">
+              <h3>Liên Hệ</h3>
+              <p>
+                <i class="fa fa-map-signs" aria-hidden="true"></i>
+                <span>1 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</span>
+              </p>
+              <p>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+                <span> 096.156.2525 </span>
+              </p>
+              <p>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span><a href="#">hieunq@gmail.com</a></span>
+              </p>
+            </div>
+            <!-- end footer-box-c -->
+          </div>
+          <!-- end col -->
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="footer-box-d">
+              <h3>Giờ mở cửa</h3>
+              <div>
+                <p>Các ngày trong tuần </p>
+                <span> 7:00 AM - 10:00 PM</span>
+              </div>
+            </div>
+            <!-- end footer-box-d -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end footer-in-main -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+    <div id="copyright" class="copyright-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h6 class="copy-title"> &copy; 2021 Đặt hàng online <a href="#" target="_blank"></a> </h6>
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end copyright-main -->
+  </div>
+  <!-- end footer-box -->
+</div>
+<!-- end footer-main -->
+
+<a href="#" class="scrollup" style="display: none;">Scroll</a>
+
+<section id="color-panel" class="close-color-panel">
+  <a class="panel-button gray2"><i class="fa fa-cog fa-spin fa-2x"></i></a>
+  <!-- Colors -->
+  <div class="segment">
+    <h4 class="gray2 normal no-padding">Color Scheme</h4>
+    <a title="orange" class="switcher orange-bg"></a>
+    <a title="strong-blue" class="switcher strong-blue-bg"></a>
+    <a title="moderate-green" class="switcher moderate-green-bg"></a>
+    <a title="vivid-yellow" class="switcher vivid-yellow-bg"></a>
+  </div>
+</section>
+
+<!-- ALL JS FILES -->
+<script src="js/all.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/custom.js"></script>
+<script src="js/management.js"></script>
+</body>
+
+</html>

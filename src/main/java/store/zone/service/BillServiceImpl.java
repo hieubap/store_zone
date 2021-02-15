@@ -156,6 +156,7 @@ public class BillServiceImpl implements BillService{
       listBillFood.add(billFood);
     }
 
+    dto.setDate(entity.getCreatedDate());
     dto.setFoods(listBillFood);
     dto.setStatus(entity.getStatus().getString());
     dto.setUser(UserServiceImpl.convertUserEntityToDTO(entity.getUser()));

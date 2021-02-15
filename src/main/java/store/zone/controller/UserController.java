@@ -16,17 +16,12 @@ import store.zone.dto.LoginDTO;
 import store.zone.dto.UserDTO;
 import store.zone.service.UserService;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:63342")
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
   @Autowired
   public UserService userService;
-
-  @RequestMapping(value = "/login" , method = RequestMethod.POST)
-  public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO) throws Exception {
-    return userService.login(loginDTO);
-  }
 
   @GetMapping(value = "/search")
   public ResponseEntity<?> search(UserDTO userDTO){

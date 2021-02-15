@@ -1,5 +1,6 @@
 package store.zone.dto;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,8 @@ public class BillDTO {
 
   private Long total;
   private String status;
+
+  private LocalDateTime date;
 
   @Getter
   @Setter

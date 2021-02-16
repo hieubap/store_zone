@@ -69,7 +69,7 @@ function showBill(){
           list += '<div onclick="changeHidden('+arr[i].id+')" class="list_food_order">'
               + '<div style="float: left;margin-left: 20px;width: 300px"><div style="float: top;font-size: 17px"><b>id</b>: '+arr[i].id+' </div>'
               + '<div style="float: top;font-size: 17px"><b>người đặt</b>: '+arr[i].user.name+'</div>'
-              // + '<div style="float: top;font-size: 17px"><b>thời gian</b>: '+arr[i].date+'</div>'
+              + '<div style="float: top;font-size: 17px"><b>thời gian</b>: '+arr[i].date+'</div>'
               + '</div>'
               + '<div style="float: left;margin-left: 20px"><div style="float: top;font-size: 17px"><b>tổng tiền</b>:'+arr[i].total+' </div>'
               + '<div style="float: top;font-size: 17px"><b>trạng thái</b>: '+arr[i].status+'</div>'

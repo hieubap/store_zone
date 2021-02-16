@@ -9,7 +9,7 @@ const url_menu_delete = 'http://93.188.162.82:8080/food/delete?id=';
 const url_bill = "http://93.188.162.82:8080/bill/search?name=";
 const url_bill_delete = "http://93.188.162.82:8080/bill/delete?id=";
 
-const url_bill_dashboard = "http://localhost:8080/bill/dashboard?from=2021-02-01&to=2021-03-01";
+const url_bill_dashboard = "http://93.188.162.82:8080/bill/dashboard?from=2021-02-01&to=2021-03-01";
 function getDaysOfMonth(year, month) {return new Date(year, month, 0).getDate();}
 
 function convertPrice(price){

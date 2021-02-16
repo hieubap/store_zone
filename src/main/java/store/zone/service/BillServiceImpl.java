@@ -1,5 +1,6 @@
 package store.zone.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import store.zone.dao.model.BillEntity;
 import store.zone.dao.model.BillFoodEntity;
-import store.zone.dao.model.FoodEntity;
 import store.zone.dao.model.UserEntity;
 import store.zone.dao.repository.BillFoodRepository;
 import store.zone.dao.repository.BillRepository;
@@ -140,6 +140,13 @@ public class BillServiceImpl implements BillService{
     billRepository.save(billEntity);
 
     return new ResponseEntity<>(new ResponseDTO<>(convertBillEntityToDTO(billEntity)), HttpStatus.OK);
+  }
+
+  @Override
+  public ResponseEntity<?> dashboard(LocalDate start, LocalDate end) {
+    List<Map<Long,Long>> data = billRepository.dashboard(start, end);
+
+    return new ResponseEntity<>(new ResponseDTO<>(data), HttpStatus.OK);
   }
 
   public static BillDTO convertBillEntityToDTO(BillEntity entity){

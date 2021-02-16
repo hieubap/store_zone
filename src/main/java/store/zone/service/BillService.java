@@ -1,5 +1,7 @@
 package store.zone.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import org.springframework.http.ResponseEntity;
 import store.zone.dto.OrderDTO;
 
@@ -12,4 +14,5 @@ public interface BillService {
   public ResponseEntity<?> storeConfirm(Long id) throws Exception;
   public ResponseEntity<?> cancel(Long id) throws Exception;
   public ResponseEntity<?> delivered(Long id) throws Exception;
+  public ResponseEntity<?> dashboard(LocalDate start,LocalDate end);
 }
